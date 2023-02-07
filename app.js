@@ -54,7 +54,7 @@ const getPairWithMostDays = (data) => {
                 currentEmployee.startDate,
                 currentEmployee.finishDate
             );
-            const customID = workedWithEmployee.employeeID + currentEmployee.employeeID;
+            const customID = workedWithEmployee.employeeID + '-' + currentEmployee.employeeID;
 
             const outputData = {
                 projectID: workedWithEmployee.projectID,
@@ -96,6 +96,7 @@ csvForm.addEventListener('submit', (e) => {
 
         const extractedData = text.split('\n').map((data) => {
             const splitData = data.split(',');
+            
             return {
                 employeeID: Number(splitData[0]),
                 projectID: Number(splitData[1]),
@@ -103,6 +104,7 @@ csvForm.addEventListener('submit', (e) => {
                 finishDate: splitData[3] === 'NULL' || splitData[3] === null ? new Date() : new Date(splitData[3])
             }
         });
+
         const pairWithMostDays = getPairWithMostDays(extractedData);
 
         updateAnnouncementHTML(pairWithMostDays);
