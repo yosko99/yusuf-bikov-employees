@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="text-center my-4">
+        <h2>Pair of employees who have worked together</h2>
+    </div>
+
+    <div class="container">
+        <form id="csv-form" class="text-center">
+            <div class="form-group my-3">
+                <label for="csv-file">Select a CSV file</label>
+                <input type="file" class="form-control-file" id="csv-file">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary w-50">Submit</button>
+              </div>
+        </form>
+    
+        <p id="announcement" class="text-center fs-2 mt-5">Please, select a CSV file</p>
+
+        <table class="table table-striped">
+            <thead class="thead-mark">
+              <tr>
+                <th scope="col">Employee ID #1</th>
+                <th scope="col">Employee ID #2</th>
+                <th scope="col">Project ID</th>
+                <th scope="col">Days Worked</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+          </table>
+    </div>
+</body>
+<script src="/app.js"></script>
+
+</html>
